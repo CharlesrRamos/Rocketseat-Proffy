@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import logoImg from "../../assets/images/logo.svg";
 import ladingImg from "../../assets/images/landing.svg";
@@ -11,16 +11,15 @@ import api from "../../services/api";
 
 import "./styles.css";
 
-
 function Landing() {
-   const [totalConections, setTotalConnections] = useState(0);
+  const [totalConections, setTotalConnections] = useState(0);
 
-   useEffect(()=> {
-     api.get('connections').then(response => {
-       const {total} = response.data;
-       setTotalConnections(total);
-     })
-   }, []);
+  useEffect(() => {
+    api.get("connections").then((response) => {
+      const { total } = response.data;
+      setTotalConnections(total);
+    });
+  }, []);
 
   return (
     <div id="page-landing">
